@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./src/server.js"
   },
   "repository": {
     "type": "git",
@@ -16,5 +17,12 @@
   "bugs": {
     "url": "https://github.com/darmayasa221/bookshelf-API-NodeJS-hapi/issues"
   },
-  "homepage": "https://github.com/darmayasa221/bookshelf-API-NodeJS-hapi#readme"
+  "homepage": "https://github.com/darmayasa221/bookshelf-API-NodeJS-hapi#readme",
+  "dependencies": {
+    "nanoid": "^3.1.23",
+    "nodemon": "^2.0.7"
+  },
+  "devDependencies": {
+    "@hapi/hapi": "^20.1.3"
+  }
 }
