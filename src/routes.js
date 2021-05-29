@@ -1,21 +1,37 @@
-const { addBookAllData, getBooks, showBookByID } = require("./handler")
+const {
+  addBookAllData,
+  getAllBooks,
+  getBookById,
+  editBookById,
+  deleteBookById,
+} = require('./handler');
 
 const routes = [
   {
-    method:'POST',
-    path:'/books',
+    method: 'POST',
+    path: '/books',
     handler: addBookAllData,
   },
   {
-    method:'GET',
-    path:'/books',
-    handler: getBooks,
+    method: 'GET',
+    path: '/books',
+    handler: getAllBooks,
   },
   {
-    method:'GET',
-    path:'/books/{id}',
-    handler: showBookByID,
-  }
-]
+    method: 'GET',
+    path: '/books/{id}',
+    handler: getBookById,
+  },
+  {
+    method: 'PUT',
+    path: '/books/{id}',
+    handler: editBookById,
+  },
+  {
+    method: 'DELETE',
+    path: '/books/{id}',
+    handler: deleteBookById,
+  },
+];
 
-module.exports = routes
+module.exports = routes;

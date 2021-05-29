@@ -1,16 +1,14 @@
-const hapi = require('@hapi/hapi');
+const Hapi = require('@hapi/hapi');
 const routes = require('./routes');
 
-const server = async () => {
-  const listen = hapi.server({
-    port: 3000,
+const init = async () => {
+  const server = Hapi.server({
+    port: 5000,
     host: 'localhost',
   });
+  server.route(routes);
+  await server.start();
+  console.log(`Server runing on ${server.info.uri}`);
+};
 
-  listen.route(routes);
-
-  await listen.start();
-  console.log(`server runing on ${listen.info.uri}`)
-}
-
-server()
+init();
